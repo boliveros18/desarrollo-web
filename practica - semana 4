@@ -1,0 +1,33 @@
+<body>
+<form id="age-form">
+    <label for="age">Por favor, ingresa tu edad:</label>
+    <input type="number" id="age" name="age" required>
+    <input type="submit" value="Consultar">
+</form>
+<div>
+     <p id="adult" style="display: none">Ya cumpliste la mayoría de edad</p>
+     <p id="minor" style="display: none">No has cumplido la mayoría de edad</p>
+</div>
+<script>
+
+document.getElementById("age-form").addEventListener("submit", function(event) {
+          event.preventDefault()
+
+          const age = parseInt(document.getElementById("age").value);
+
+          if(age >= 18){  let status = "adult" } else { let status = "minor" }  //Opción 1
+
+          let status =  age >= 18  ?  "adult" : "minor"                         //Opción 2
+
+          if(status === "adult"){
+          document.getElementById("adult").style.display = "block";
+          document.getElementById("minor").style.display = "none";
+          } else {
+          document.getElementById("minor").style.display = "block";
+          document.getElementById("adult").style.display = "none";
+          }
+
+          })
+
+</script>
+</body>
