@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Mi tienda
+    <p id="saludo"></p>
+
+    <label for="opciones">Selecciona una opcion:</label>
+    <select id="productos">
+        <option value=""></option>
+        <option value="electronico">Iphone 13: $1200 </option>
+        <option value="ropa">Blusa M - Patprimo: $65 </option>
+        <option value="libro">El Principito: $35 </option>
+    </select>
+
+    <ul>
+        <li> El descuento es:
+            <span id="descuento"></span>
+        </li>
+        <li> El subtotal es:
+            <span id="subtotal"></span>
+        </li>
+        <li> El impuesto del 8% es:
+            <span id="impuesto"></span>
+        </li>
+        <li> El costo total es:
+            <span id="total"></span>
+        </li>
+    </ul>
+
+    <ul>
+        <select id="envio">
+            <option value=""></option>
+            <option value="local"> Local: $5 </option>
+            <option value="nacional"> Nacional: $10 </option>
+        </select>
+        <li> El costo total mas el envio es:
+            <span id="costo-envio"></span>
+        </li>
+    </ul>
+
+    <script>
+
+        let hour = new Date().getHours()
+        let saludo
+        switch (true) {
+            case (hour >= 5 && hour < 12):
+                saludo = "¡Buenos días!"
+                break
+            case (hour >= 12 && hour < 18):
+                saludo = "¡Buenas tardes!"
+                break
+            default:
+                saludo = "¡Buenas noches!"
+                break
+        }
+        window.onload = function () {
+            document.getElementById("saludo").textContent = saludo
+        };
+
+        let descuento = 0
+        let productos = {
+            electronico: {
+                celulares: {
+                    iphone_13: {
+                        name: "Iphone 13",
+                        costo: 1200
+                    }
+                }
+            },
+            ropa: {
+                mujer: {
+                    blusa_patprimo: {
+                        name: "Blusa M - Patprimo",
+                        costo: 65
+                    }
+                }
+            },
+            libro: {
+                fantasia: {
+                    principito: {
+                        name: "El principito",
+                        costo: 35
+                    }
+                }
+            }
+        }
+
+        let total
+        document.getElementById("productos").addEventListener("change", function () {
+
+            let costo
+            let tipoProducto = document.getElementById("productos").value
+
+            switch (tipoProducto) {
+                case "electronico":
+                    costo = productos.electronico.celulares.iphone_13.costo
+                    if (costo > 1000) {
+                        descuento = 0.1 * costo
+                    }
+                    break
+                case "ropa":
+                    costo = productos.ropa.mujer.blusa_patprimo.costo
+                    if (costo > 50) {
+                        descuento = 0.05 * costo
+                    }
+                    break;
+                case "libro":
+                    costo = productos.libro.fantasia.principito.costo
+                    if (costo > 30) {
+                        descuento = 5
+                    }
+                    break;
+            }
+
+            document.getElementById("descuento").textContent = descuento
+            let subtotal = costo - descuento
+            document.getElementById("subtotal").textContent = subtotal
+            document.getElementById("impuesto").textContent = subtotal * 0.08
+            total = document.getElementById("total").textContent = subtotal * 1.08
+
+        });
+
+        document.getElementById("envio").addEventListener("change", function () {
+
+            let destino = document.getElementById("envio").value
+            let costoEnvio
+            switch (destino) {
+                case "local":
+                    costoEnvio = 5
+                    break;
+                case "nacional":
+                    costoEnvio = 10
+                    break;
+                default:
+                    costoEnvio = 0
+                    break;
+            }
+
+            document.getElementById("costo-envio").textContent = total + costoEnvio
+
+        });
+
+    </script>
+</body>
+
+</html>
