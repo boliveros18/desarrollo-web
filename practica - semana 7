@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Areas</title>
+</head>
+
+<body>
+
+    <h2>Areas geometricas</h2>
+    <br>
+    <img src="https://www.neurochispas.com/wp-content/uploads/2021/03/formula-del-area-de-un-circulo.png" width="200"
+        height="200">
+    <h3>Circulo</h3>
+    <form id="circulo-form">
+        <label for="radio-circulo">Ingresa radio en metros:</label>
+        <input type="float" id="radio-circulo" name="radio-circulo">
+        <input type="submit" value="Calcula">
+    </form>
+    <p>resultado: <span id="area-circulo"></span></p>
+
+    <br>
+    <img src="https://www.neurochispas.com/wp-content/uploads/2022/07/Formulas-del-area-y-del-volumen-de-un-cilindro.png"
+        width="200" height="200">
+    <h3>Cubo</h3>
+    <form id="cubo-form">
+        <label for="radio-cubo">Ingresa el radio en metros:</label>
+        <input type="float" id="radio-cubo" name="radio-cubo">
+        <label for="altura-cubo">Ingresa la altura en metros:</label>
+        <input type="float" id="altura-cubo" name="altura-cubo">
+        <input type="submit" value="Calcula">
+    </form>
+    <p>resultado: <span id="area-cubo"></span></p>
+
+    <script>
+
+        const PI = 3.1416;
+
+        function redondeo(number) {
+            return number.toFixed(3);
+        }
+
+        document.getElementById("circulo-form").addEventListener("submit", function (event) {
+            event.preventDefault()
+
+            let radio = parseFloat(document.getElementById("radio-circulo").value)
+            const area = function (radio) {
+                return PI * radio * radio;
+            }
+            document.getElementById("area-circulo").textContent = redondeo(area(radio));
+        })
+
+        document.getElementById("cubo-form").addEventListener("submit", function (event) {
+            event.preventDefault()
+
+            let radio = parseFloat(document.getElementById("radio-cubo").value)
+            let altura = parseFloat(document.getElementById("altura-cubo").value)
+            const area = (radio, altura, pi = 3.1416) => 2 * pi * radio * (radio + altura);
+
+            document.getElementById("area-cubo").textContent = redondeo(area(radio, altura));
+        })
+
+    </script>
+
+</body>
+
+</html>
