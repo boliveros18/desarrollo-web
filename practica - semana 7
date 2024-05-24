@@ -24,7 +24,7 @@
     <br>
     <img src="https://www.neurochispas.com/wp-content/uploads/2022/07/Formulas-del-area-y-del-volumen-de-un-cilindro.png"
         width="200" height="200">
-    <h3>Cubo</h3>
+    <h3>Circulo</h3>
     <form id="cubo-form">
         <label for="radio-cubo">Ingresa el radio en metros:</label>
         <input type="float" id="radio-cubo" name="radio-cubo">
