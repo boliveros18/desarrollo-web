@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Periodico</title>
+  </head>
+  <body style="justify-content: center">
+    <header
+      style="display: flex; flex-direction: row; justify-content: space-between"
+    >
+      <aside
+        style="
+          border: 1px solid black;
+          border-end-start-radius: 20px;
+          border-top-right-radius: 20px;
+          padding: 15px;
+          margin: 10px;
+          width: 100%;
+          text-align: justify;
+          text-align-last: center;
+        "
+      >
+        cedime c.a.
+      </aside>
+      <section>
+        <h1 style="font-size: 90px; margin-bottom: -20px; margin-top: -10px">
+          Impacto
+        </h1>
+        <h5
+          style="text-align: justify; text-align-last: end; margin-top: -10px"
+        >
+          Vespertino de Margarita
+        </h5>
+        <p
+          style="
+            border: 1px solid black;
+            padding: 10px;
+            font-size: x-small;
+            margin-top: -15px;
+          "
+        >
+          AÑO I N° 203 POLAMAR, VIERNES 5 DE AGOSTO DE 1977 Bs. 0,50
+        </p>
+      </section>
+      <aside
+        style="
+          border: 1px solid black;
+          border-end-end-radius: 30px;
+          border-top-left-radius: 30px;
+          padding: 15px;
+          margin: 10px;
+          width: 100%;
+          text-align: justify;
+          text-align-last: center;
+        "
+      >
+        Zaleski s.a
+      </aside>
+    </header>
+    <main style="display: flex; flex-direction: row; justify-content: baseline">
+      <aside style="margin-inline: 10px">
+        <img src="../public/cristal_montañez.png" width="300" />
+        <span
+          style="display: flex; justify-content: center; font-size: xx-small"
+          >Sonrisa de cristal Montañez, Miss venezuela.</span
+        >
+      </aside>
+      <section>
+        <header>
+          <div
+            style="
+              border: 1px solid black;
+              border-radius: 15px;
+              padding-inline: 10px;
+              background-color: gray;
+              color: white;
+              font-size: x-large;
+              text-align: justify;
+              text-align-last: center;
+            "
+          >
+            <h1>
+              Se Presento a los Medios de Comunicacion Social la Nueva Linea de
+              Promocion Dimple
+            </h1>
+          </div>
+          <h2 style="text-align: justify; text-align-last: center">
+            *Contó con la presencia de Miss Venezuela 77, Cristal Montañez
+          </h2>
+        </header>
+        <article
+          style="
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            font-size: xx-small;
+            font-weight: bold;
+          "
+        >
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem
+            harum mollitia nulla ab porro facilis architecto labore quisquam
+            voluptate laudantium suscipit ipsa ullam ipsam numquam cum qui eos,
+            nam rerum!
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            facere dolores, voluptates tempore laudantium quis fugiat minus,
+            dolore dolorum nihil beatae natus deserunt dignissimos, odit magni
+            ut iusto alias officia.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            facere dolores, voluptates tempore laudantium quis fugiat minus,
+            dolore dolorum nihil beatae natus deserunt dignissimos, odit magni
+            ut iusto alias officia.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            facere dolores, voluptates tempore laudantium quis fugiat minus,
+            dolore dolorum nihil beatae natus deserunt dignissimos, odit magni
+            ut iusto alias officia.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            facere dolores, voluptates tempore laudantium quis fugiat minus,
+            dolore dolorum nihil beatae natus deserunt dignissimos, odit magni
+            ut iusto alias officia.
+          </p>
+        </article>
+        <footer style="display: flex; justify-content: center">
+          <h1>Fotos: Agustin Strochia</h1>
+        </footer>
+      </section>
+    </main>
+  </body>
+</html>
