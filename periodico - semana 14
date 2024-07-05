@@ -96,6 +96,7 @@
             justify-content: space-between;
             font-size: xx-small;
             font-weight: bold;
+            padding: 15px;
           "
         >
           <p>
