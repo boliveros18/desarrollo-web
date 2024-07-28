@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../style/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <main class="main">
+      <header id="main-header">
+        <img
+          id="console"
+          src="../gaming.png"
+        />
+        <span id="gaming">Gaming</span>
+      </header>
+      <section id="main-section">
+        <header id="section-header">Destacado</header>
+        <container class="video-list">
+          <article>
+            <span id="duration">8:45:25</span>
+            <img
+              id="video"
+              src="https://i.ytimg.com/vi/aam9VvzFuI0/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCE1CPurpheSuTHhK9Zn6fJiKY7Ig"
+            />
+            <div class="video-title-container">
+              <div id="video-title" name="video-title">
+                ULTIMOS DIAS!!! || TRY HARD Y con la CALCULADORA en la MANO
+              </div>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <footer class="video-footer">
+              <div>ChasQuiiX</div>
+              <div>1,7 K Visualizaciones</div>
+              <div class="emitted"> <i class="fa-solid fa-circle"></i>Emitido hace 1 día</div>
+            </footer>
+          </article>
+          <article>
+            <span id="duration">8:16:07</span>
+            <img
+              id="video"
+              src="https://i.ytimg.com/vi/NzfMoLSOgGw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBk4jc_3uQbdx6A9JM_WR-cd6SxOg"
+            />
+            <div class="video-title-container">
+              <div id="video-title" name="video-title">
+                🏆 RED BULL - ULTIMOS 3 DIAS 🏆 HEARTTT #5 - SEBASTIAN #6 - CAPOCH #12 - NICOV #16 🏆 4 LUGARES
+              </div>
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <footer class="video-footer">
+              <div>Loco Ser</div>
+              <div>15 K Visualizaciones</div>
+              <div class="emitted"> <i class="fa-solid fa-circle"></i>Emitido hace 1 día</div>
+            </footer>
+          </article>
+        </container>
+      </section>
+    </main>
+    <script>
+      const ellipsis = (strings) => {
+        return strings.substring(0, 69) + "...";
+      };
+      const video_title = document.getElementsByName("video-title");
+          video_title.forEach(
+            (item) => item.textContent = ellipsis(item.textContent)
+          )
+    </script>
+  </body>
+</html>
