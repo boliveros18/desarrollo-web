@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="../styles/style.css" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="name">Name </label>
+        <input id="name" required type="text" name="name" />
+        <div id="name-error"></div>
+      </div>
+      <div>
+        <label for="lastname">Lastname </label>
+        <input id="lastname" required type="text" name="lastname" />
+        <div id="lastname-error"></div>
+      </div>
+      <div>
+        <label for="email">Email </label>
+        <input id="email" required type="email" name="email" />
+        <div id="email-error"></div>
+      </div>
+      <div>
+        <label for="pass">Password </label>
+        <input id="pass" required type="password" name="password" />
+        <div id="password-error"></div>
+      </div>
+      <div class="button">
+        <button id="submit" type="submit">CONTINUE</button>
+      </div>
+    </form>
+  </body>
+  <script>
+    const user = {
+      name: {
+        value: "",
+        validate: false,
+      },
+      lastname: {
+        value: "",
+        validate: false,
+      },
+      email: {
+        value: "",
+        validate: true,
+      },
+      password: {
+        value: "",
+        validate: false,
+      },
+    };
+
+    let validate = true;
+
+    document.addEventListener("input", (e) => {
+      const value = e.target.value;
+      user[e.target.name].value = value;
+      switch (e.target.name) {
+        case "name":
+          if (user["name"].value.length < 2) {
+            document.getElementById("name-error").style.visibility = "visible";
+            document.getElementById("name-error").textContent =
+              "Minimo 2 caracteres";
+            document.getElementById("name").style.border = "solid red 1px";
+            user["name"].validate = false;
+          } else {
+            document.getElementById("name-error").style.visibility = "hidden";
+            document.getElementById("name").style.border = "solid black 1px";
+            user["name"].validate = true;
+          }
+          break;
+        case "lastname":
+          break;
+        case "password":
+          break;
+      }
+    });
+
+    document.addEventListener("submit", (e) => {
+      e.preventDefault();
+      for (const key in user) {
+        if (!user[key].validate) {
+          validate = false;
+        }
+      }
+      if (validate) {
+        alert("Cuenta registrada");
+      } else {
+        alert("Valide los campos ingresados");
+      }
+    });
+  </script>
+</html>
